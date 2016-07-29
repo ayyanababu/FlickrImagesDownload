@@ -33,7 +33,7 @@ class FlickrHelper{
         
     }
     
-    func searchFlickrForString(searchStr:String, completion:(searchString:String!, flickrPhotos:NSMutableArray!, error:NSError!)->()){
+    func searchFlickrForString(searchStr:String, completion:(searchString:String!, flickrPhotos: [FlickrObject]!, error:NSError!)->()){
         
         let searchURL:String = FlickrHelper.URLForSearchString(searchStr)
         let queue:dispatch_queue_t  = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
@@ -74,7 +74,7 @@ class FlickrHelper{
                 let photosDict:NSDictionary = resultdict.objectForKey("photos") as! NSDictionary
                 let resultArray:NSArray = photosDict.objectForKey("photo") as! NSArray
                 
-                let flickrPhotos:NSMutableArray = NSMutableArray()
+                var flickrPhotos: [FlickrObject] = []
                 
                 for photoObject in resultArray{
                     let photoDict:NSDictionary = photoObject as! NSDictionary
@@ -89,8 +89,11 @@ class FlickrHelper{
                     flickrPhoto.photoID = photoDict.objectForKey("id") as! String
                     
                     let searchURL:NSString = FlickrHelper.URLForFlickrPhoto(flickrPhoto, size: "m")
+                    let phototitle: String = photoDict.objectForKey("title") as! String
                     
-                    flickrPhotos.addObject(searchURL)
+                    let flickrObject: FlickrObject = FlickrObject(phototitle: phototitle, imageurl: searchURL as String)
+                    
+                    flickrPhotos.append(flickrObject)
                     
                 }
                 completion(searchString: searchURL, flickrPhotos: flickrPhotos, error: nil)

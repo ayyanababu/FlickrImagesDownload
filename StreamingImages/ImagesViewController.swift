@@ -10,16 +10,14 @@ import UIKit
 
 class ImagesViewController: UITableViewController {
     
-    var flickrResults:NSMutableArray! = NSMutableArray()
-
-
+    var flickrResults:[FlickrObject]! = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //self.tableView.separatorColor  = UIColor.clearColor()
         self.loadPhotos()
     }
-
+    
     
     func loadPhotos(){
         let flickr:FlickrHelper = FlickrHelper()
@@ -27,57 +25,50 @@ class ImagesViewController: UITableViewController {
             if error == nil{
                 
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.flickrResults = NSMutableArray(array: flickrPhotos)
+                    self.flickrResults = flickrPhotos
                     //self.collectionView.reloadData()
                     print("photos printed by ayyan \(self.flickrResults)")
                     self.tableView.reloadData()
                     
                 })
             }
-
+            
         }
     }
     
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.flickrResults.count
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("imagecell", forIndexPath: indexPath) as! ImageCell
         let queue:dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-
-        dispatch_async(queue) { 
-            var error:NSError?
-            let searchURL:String = self.flickrResults.objectAtIndex(indexPath.item) as! String
-            let imagedata: NSData = NSData(contentsOfURL: NSURL(string: searchURL)!)!
-            if error == nil{
-                let image:UIImage = UIImage(data: imagedata)!
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    cell.configureCell(image)
-                })
-                
-            }
-
-
-
+        
+        dispatch_async(queue) {
+            let photoObject: FlickrObject = self.flickrResults[indexPath.row]
+            let imagedata: NSData = NSData(contentsOfURL: photoObject.url)!
+            let image:UIImage = UIImage(data: imagedata)!
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                cell.configureCell(image)
+            })
+            
         }
+        
         return cell
     }
     
-
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 200
     }
-
-   }
+    
+}
