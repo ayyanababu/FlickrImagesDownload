@@ -13,7 +13,6 @@
 		356279E61D4B511C00BF4037 /* FlickrPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356279E51D4B511C00BF4037 /* FlickrPhoto.swift */; };
 		356279E81D4B513700BF4037 /* FlickrHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356279E71D4B513700BF4037 /* FlickrHelper.swift */; };
 		3584C0951D4B25AC004B8FEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584C0941D4B25AC004B8FEE /* AppDelegate.swift */; };
-		3584C0971D4B25AC004B8FEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3584C0961D4B25AC004B8FEE /* ViewController.swift */; };
 		3584C09A1D4B25AC004B8FEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3584C0981D4B25AC004B8FEE /* Main.storyboard */; };
 		3584C09D1D4B25AC004B8FEE /* StreamingImages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3584C09B1D4B25AC004B8FEE /* StreamingImages.xcdatamodeld */; };
 		3584C09F1D4B25AC004B8FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3584C09E1D4B25AC004B8FEE /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 		356279E71D4B513700BF4037 /* FlickrHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrHelper.swift; sourceTree = "<group>"; };
 		3584C0911D4B25AC004B8FEE /* StreamingImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreamingImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3584C0941D4B25AC004B8FEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3584C0961D4B25AC004B8FEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3584C0991D4B25AC004B8FEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3584C09C1D4B25AC004B8FEE /* StreamingImages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StreamingImages.xcdatamodel; sourceTree = "<group>"; };
 		3584C09E1D4B25AC004B8FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				3584C0AB1D4B25C1004B8FEE /* view */,
 				3584C0AA1D4B25BC004B8FEE /* modal */,
 				3584C0A91D4B25B6004B8FEE /* controller */,
-				3584C0961D4B25AC004B8FEE /* ViewController.swift */,
 				3584C0941D4B25AC004B8FEE /* AppDelegate.swift */,
 				3584C09E1D4B25AC004B8FEE /* Assets.xcassets */,
 				3584C0A01D4B25AC004B8FEE /* LaunchScreen.storyboard */,
@@ -194,7 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3584C09D1D4B25AC004B8FEE /* StreamingImages.xcdatamodeld in Sources */,
-				3584C0971D4B25AC004B8FEE /* ViewController.swift in Sources */,
 				356279E01D4B317A00BF4037 /* ImagesViewController.swift in Sources */,
 				356279E61D4B511C00BF4037 /* FlickrPhoto.swift in Sources */,
 				3584C0951D4B25AC004B8FEE /* AppDelegate.swift in Sources */,

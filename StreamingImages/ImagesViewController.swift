@@ -26,8 +26,6 @@ class ImagesViewController: UITableViewController {
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     self.flickrResults = flickrPhotos
-                    //self.collectionView.reloadData()
-                    print("photos printed by ayyan \(self.flickrResults)")
                     self.tableView.reloadData()
                     
                 })
