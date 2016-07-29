@@ -12,6 +12,7 @@ class ImageCell: UITableViewCell {
     
     
     @IBOutlet weak var flickrImageView: UIImageView!
+    @IBOutlet weak var photoTitle: UILabel!
     
 
     override func awakeFromNib() {
@@ -27,8 +28,9 @@ class ImageCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(image: UIImage){
+    func configureCell(image: UIImage, title: String){
         self.flickrImageView.image = image
+        self.photoTitle.text = title
     }
 
 }

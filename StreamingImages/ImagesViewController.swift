@@ -56,7 +56,7 @@ class ImagesViewController: UITableViewController {
             let image:UIImage = UIImage(data: imagedata)!
             
             dispatch_async(dispatch_get_main_queue(), {
-                cell.configureCell(image)
+                cell.configureCell(image,title: photoObject.title)
             })
             
         }

@@ -22,20 +22,35 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="OSi-dU-RQz">
-                                            <rect key="frame" x="5" y="10" width="590" height="179.5"/>
+                                            <rect key="frame" x="5" y="10" width="590" height="160"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="160" id="iso-xu-kvD"/>
+                                            </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wd-i7-mfI">
+                                            <rect key="frame" x="5" y="167.5" width="590" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="igD-NC-qpb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                            <color key="textColor" red="1" green="0.44705882349999998" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="OSi-dU-RQz" firstAttribute="top" secondItem="fuQ-nt-2RU" secondAttribute="top" constant="10" id="LgU-2p-OxR"/>
-                                        <constraint firstItem="OSi-dU-RQz" firstAttribute="leading" secondItem="fuQ-nt-2RU" secondAttribute="leading" constant="5" id="biQ-Yv-jBw"/>
-                                        <constraint firstAttribute="trailing" secondItem="OSi-dU-RQz" secondAttribute="trailing" constant="5" id="p6g-o1-x3h"/>
-                                        <constraint firstAttribute="bottom" secondItem="OSi-dU-RQz" secondAttribute="bottom" constant="10" id="zQO-BD-1Vl"/>
+                                        <constraint firstAttribute="bottom" secondItem="5Wd-i7-mfI" secondAttribute="bottom" constant="2" id="7uf-ys-tH8"/>
+                                        <constraint firstItem="OSi-dU-RQz" firstAttribute="top" secondItem="fuQ-nt-2RU" secondAttribute="top" constant="10" id="VuF-hL-C53"/>
+                                        <constraint firstItem="5Wd-i7-mfI" firstAttribute="leading" secondItem="fuQ-nt-2RU" secondAttribute="leading" constant="5" id="gT4-rf-mfL"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Wd-i7-mfI" secondAttribute="trailing" constant="5" id="iRx-rD-WIl"/>
+                                        <constraint firstItem="OSi-dU-RQz" firstAttribute="leading" secondItem="fuQ-nt-2RU" secondAttribute="leading" constant="5" id="mHZ-eA-ljV"/>
+                                        <constraint firstAttribute="trailing" secondItem="OSi-dU-RQz" secondAttribute="trailing" constant="5" id="rPa-ni-Lw7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="flickrImageView" destination="OSi-dU-RQz" id="z5q-RD-G8U"/>
+                                    <outlet property="photoTitle" destination="5Wd-i7-mfI" id="EOK-uz-bUW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
