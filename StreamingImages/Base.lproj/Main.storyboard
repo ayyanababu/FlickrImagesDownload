@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1aD-S1-Bv9">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Images-->
+        <scene sceneID="vwg-3D-BPY">
+            <objects>
+                <tableViewController id="A9f-r0-5ls" customClass="ImagesViewController" customModule="StreamingImages" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="x3b-Qo-2PD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imagecell" rowHeight="200" id="Ocw-jg-wFN" customClass="ImageCell" customModule="StreamingImages" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ocw-jg-wFN" id="fuQ-nt-2RU">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="OSi-dU-RQz">
+                                            <rect key="frame" x="5" y="10" width="590" height="179.5"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="OSi-dU-RQz" firstAttribute="top" secondItem="fuQ-nt-2RU" secondAttribute="top" constant="10" id="LgU-2p-OxR"/>
+                                        <constraint firstItem="OSi-dU-RQz" firstAttribute="leading" secondItem="fuQ-nt-2RU" secondAttribute="leading" constant="5" id="biQ-Yv-jBw"/>
+                                        <constraint firstAttribute="trailing" secondItem="OSi-dU-RQz" secondAttribute="trailing" constant="5" id="p6g-o1-x3h"/>
+                                        <constraint firstAttribute="bottom" secondItem="OSi-dU-RQz" secondAttribute="bottom" constant="10" id="zQO-BD-1Vl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="flickrImageView" destination="OSi-dU-RQz" id="z5q-RD-G8U"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="A9f-r0-5ls" id="y94-ah-9lZ"/>
+                            <outlet property="delegate" destination="A9f-r0-5ls" id="ITy-fH-oVR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Images" id="cPG-aU-XfZ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KsP-7k-7bi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2296" y="288"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TbO-C8-pA1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1aD-S1-Bv9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1vW-On-GUP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.51372549020000002" green="0.5450980392" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="A9f-r0-5ls" kind="relationship" relationship="rootViewController" id="MbA-EH-vv2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OTs-ya-wa4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="288"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="default" width="251" height="201"/>
+    </resources>
+</document>
